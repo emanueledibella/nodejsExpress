@@ -54,7 +54,7 @@ app.put('/user/:id', (req, res) => {
     res.send(user);
 });
 
-app.delete('/user:id', (res, req) => {
+app.delete('/user/:id', (res, req) => {
     let user = users.find(c => c.id === parseInt(req.params.id));
     if (!user) return res.status(404).send('User with given id is not found');
 
