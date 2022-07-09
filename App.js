@@ -1,8 +1,5 @@
 // Joi for input validation
 const Joi = require('joi');
-const joi = new Joi();
-
-
 const express = require('express');
 const app = express();
 
@@ -31,7 +28,7 @@ app.get('/posts/:year/:month', (req, res) => {
 });
 
 // da testare con postman
-app.post('/user', (res, res) => {
+app.post('/user', (res, req) => {
     const {error} = validateUser(req.body);//result.error
     if (error) return res.status(400).send(error.details[0].message);
     const user = {
